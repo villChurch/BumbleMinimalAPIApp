@@ -11,6 +11,10 @@ builder.Services.AddSingleton<ISqlDataAccess, SqlDataAccess>();
 builder.Services.AddSingleton<IGoatData, GoatData>();
 builder.Services.AddSingleton<IFarmerData, FarmerData>();
 builder.Services.AddSingleton<IDairyData, DairyData>();
+builder.Services.AddSingleton<IPerkData, PerkData>();
+builder.Services.AddSingleton<ICookingDoesData, CookingDoesData>();
+builder.Services.AddSingleton<IStickedData, StickedData>();
+builder.Services.AddSingleton<IGoatGifData, GoatGifData>();
 
 var app = builder.Build();
 
@@ -26,5 +30,9 @@ app.UseHttpsRedirection();
 app.ConfigureGoatApi();
 app.ConfigureFarmerApi();
 app.ConfigureDairyApi();
+app.ConfigurePerkApi();
+app.ConfigureCookingDoesApi();
+app.ConfigureStickApi();
+app.ConfigureGoatGifApi();
 
 app.Run();
